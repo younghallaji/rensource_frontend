@@ -1,0 +1,237 @@
+a{
+    text-decoration: none;
+}
+.hero-banner{
+    background: #002153;
+    height: auto;
+    align-items: center;
+    padding: 24px 0px;
+    border-radius: 0px;
+    border: none;
+    margin-top: 45px;
+}
+.hero-banner p{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.hero-banner h2{
+    font-family: "Open Sans";
+    font-style: normal;
+    width: 960px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    /* border: 1px solid red; */
+}
+.caseStudy{
+    background: url('../../assets/caseEllipse.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto;
+}
+.case-wrapper{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    padding-left: 64px;
+    margin-top: 96px;
+}
+.casetwo-wrapper{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    padding-right: 64px;
+    margin: 96px 0px;
+}
+.caseOne-content{
+    padding-top: 84px;
+    padding-bottom: 84px;
+}
+.caseTwo-content{
+    padding-left: 40px;
+}
+.caseOne-content .icon{
+    width: 48px;
+    height: 48px;
+    padding-top: 10px;
+    background: #F4C263;
+    text-align: center;
+    /* border: 8px solid #F4C263; */
+    border-radius: 28px;
+    margin-bottom: 24px;
+}
+
+.caseOne-content .title{
+    width: 398px;
+    height: 96px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+    color: #101828;
+}
+.caseOne-content .content{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 32px;
+    color: #667085;
+}
+.caseOne-img{
+    background: url('../../assets/valentine.png');
+    background-size: cover;
+}
+.caseTwo-img{
+    background: url('../../assets/poultry.png');
+    background-size: cover;
+    /* border-radius: 10px; */
+}
+
+.link-button {
+    padding: 15px 39px;
+    width: 190px;
+    height: 55px;
+    background: #F4C263;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: #121212;
+}
+
+.link-button:hover{
+    color: #121212;
+    transition: ease-in-out 1s;
+    background: #eea722;
+}
+.link-button img{
+    margin-left: 10px;
+}
+.case-hero-image img{
+    border-radius: 10px;
+    margin-bottom: 26px;
+}
+.case-details{
+    background:url('../../assets/singlecasebg.svg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: auto;
+    justify-content: start;
+    margin-left: 0px;
+    margin-top: 52px;
+}
+.case-details .icon{
+    width: 48px;
+    height: 48px;
+    padding-top: 10px;
+    background: #F4C263;
+    text-align: center;
+    border-radius: 28px;
+    margin-bottom: 24px;
+}
+.case-details .challenge, .solution{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 38px;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+    color: #121212;
+}
+.case-details .challenge-title, .solution-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    /* line-height: 32px; */
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+    color: #121212;
+}
+.case-details .hero-image img{
+    width: 100%;
+}
+.case-details .challenge-content, .solution-content{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -0.01em;
+    margin-bottom: 30px;
+    color: #121212;
+}
+.challenge-content, .challenge-title{
+    /* width: 564px; */
+    text-align: justify;
+}
+.solution-wrapper, .solution-title{
+    /* width: 549px; */
+    text-align: justify;
+}
+/* .next-case-study . */
+.next-content .solution-title{
+    text-align: left;
+}
+.next-content{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: #667085;
+    padding-right: 20px;
+}
+.next-details{
+    margin-bottom: 57px;
+    /* border: 1px; */
+}
+.next-case-study .card{
+    align-items: center;
+    padding: 0px 0px 0px 19px;
+    gap: 24px;
+    width: 618px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(31, 31, 31, 0.13);
+    border-radius: 1px;
+}
+@media screen and (max-width: 720px){
+    .case-hero-image img{
+        border-radius: 10px;
+        margin-bottom: 26px;
+        width: 350px; 
+        height: 200px;
+    }
+    .hero-banner h2{
+        font-style: normal;
+        font-weight: 700;
+        width: auto;
+        font-size: 35px;
+        line-height: 40px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        margin-top: 12px;
+        color: #fff;
+    }
+    .challenge-content, .challenge-title{
+        width: auto;
+    }
+    .solution-content, .solution-title{
+        width: auto;
+        text-align: justify;
+    }
+    .next-case-study .card{
+        width: auto;
+        height: auto;
+    }
+    .next-case-img{
+        display: none;
+    }
+}

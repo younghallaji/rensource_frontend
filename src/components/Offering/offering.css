@@ -1,0 +1,72 @@
+.offering-row1{
+    margin-top: 95px;
+}
+.offering-image{
+    margin-top: 77px;
+    margin-bottom: 146px;
+    height: 930px;
+    background: url('../../assets/offering.png');
+}
+.offering-content { 
+    margin-top: 220px;
+    padding-right: 96px;
+    color: #121212;
+}
+.offering-content h2{
+    margin-top: 24px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    color: #101828;
+}
+.offering-content p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #121212;
+    margin-top: 32px;
+}
+.offering-list{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #667085;
+}
+.offering-icon{
+    background: rgba(244, 194, 99, 0.18) ;
+    border-radius: 14px;
+    width: 28px;
+    height: 28px;
+    padding: 2px 5px;
+}
+.offering-bg{
+    background: url('../../assets/contact-ellipse\ .svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: right;
+    padding-top: 5px;
+}
+.offering-list .content{
+    margin-left: 12px;
+    color: #121212;
+    width: 456px;
+    font-size: 14px;
+    font-family: "lato";
+    text-align: justify;
+}
+
+@media screen and (max-width:720px) {
+    .offering-image{
+        display: none;
+    }
+    .offering-row1 .col-sm-12{
+        margin-bottom: 20px;
+    }
+    .offering-content{
+        margin: 20px 10px;
+        padding: 10px;
+    }
+}
