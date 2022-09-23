@@ -11,15 +11,13 @@ import { FiCopy } from "react-icons/fi";
 import PressCard from './PressCard'
 import { Link } from 'react-router-dom'
 import useFetch from '../../constants/useFetch'
-import pressList from '../../constants/presslist.json'
 import { useState } from 'react'
 import ReactTooltip from "react-tooltip";
 
 const SinglePressRelease = () => {
     const {id} = useParams();
-    const listId = id - 1;
-    const {data:info, loading} = useFetch('http://mutolib-001-site1.dtempurl.com/api/v1/PressRelease/PressRelease?Id='+id);
-    const {data:pressRelease, error} = useFetch('http://mutolib-001-site1.dtempurl.com/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
+    const {data:info, loading} = useFetch('http://18.193.182.151:8080/api/v1/PressRelease/PressReleaseByTitle?title='+id);
+    const {data:pressRelease, error} = useFetch('http://18.193.182.151:8080/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
     
     const handleCopy = () => {
         const url = `respaced.in/rensource/index.html#/news/${id}`
@@ -44,22 +42,31 @@ const SinglePressRelease = () => {
         </Container>
       
          <>
+         {loading && <Container>
+                    <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            </Container>}
+
+            {
+            info &&
+            <>
            
-                <SingleCaseHero title={pressList[listId].title} topic={'News'} date={pressList[listId].date}/>
+           <SingleCaseHero title={info.title} topic={'News'} date={info.date}/>
                 <div className="press-content-single-press-release" > 
 
-                <Card.Img variant="top" src={require('../../assets/Press Release/Picture '+id+'.png')} />
-                <div className='content' dangerouslySetInnerHTML={{__html: pressList[listId].content}}></div>
+                <Card.Img variant="top" src={info.image} />
+                <div className='content' dangerouslySetInnerHTML={{__html: info.content}}></div>
                 
                 <hr/>
         <Row>
             <Col lg={'5'} sm className='press-tag'>
                 
-                {/* {
+                {
                     info.tags.split(",").map(tag =>
                         <span className='tag2'>{tag}</span>
                     )
-                } */}
+                }
                 
                 {/* <span className='tag1'>Solar</span>
                 <span className='tag2'>Research</span> */}
@@ -73,7 +80,7 @@ const SinglePressRelease = () => {
                         <FiCopy/> Copy Link 
                     </span>
                     <IconContext.Provider value={{ color:'#98A2B3'}}>
-                        <a target={'_blank'} href={"https://twitter.com/share?text="+ pressList[listId].title+"&url=respaced.in/rensource/index.html#/news/"+id}><FaTwitter className='m-1 press-icon'/></a>
+                        <a target={'_blank'} href={"https://twitter.com/share?text="+ info.title+"&url=respaced.in/rensource/index.html#/news/"+id}><FaTwitter className='m-1 press-icon'/></a>
                         <FaInstagram className='m-1 press-icon'/>
                         <FaLinkedinIn className='m-1 press-icon'/>
                     </IconContext.Provider>
@@ -82,6 +89,10 @@ const SinglePressRelease = () => {
         </Row>
                 </div>
             </>
+        }  
+        
+            </>
+        
         <div className='press-release'>
         <Container fluid='md'>
         <div className="press-heading-single">
@@ -91,17 +102,14 @@ const SinglePressRelease = () => {
                 <img src={images.arrow} alt="" />
             </Link>
         </div>
-        {/* {loading && <Spinner animation="border" role="status">
+        {loading && <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>}
           {pressRelease && 
           <Row>
           <PressCard pressRelease={pressRelease} />
         </Row>
-        } */}
-        <Row>
-          <PressCard pressRelease={pressList.slice(0, 3)} />
-        </Row>
+        }
     </Container>
     </div>
         <Footer/>

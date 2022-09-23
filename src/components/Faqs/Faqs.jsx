@@ -8,7 +8,7 @@ import SingleCaseHero from '../SingleCaseStudy/SingleCaseHero'
 import useFetch from '../../constants/useFetch'
 
 const Faqs = () => {
-    const {data:faqs, loading, error} = useFetch('http://mutolib-001-site1.dtempurl.com/api/v1/FAQs/AllFAQ');
+    const {data:faqs, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/FAQs/AllFAQ');
  
   return (
     <>

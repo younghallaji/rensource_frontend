@@ -19,7 +19,7 @@ const Contactcard = () => {
     const [message, setMessage] = useState();
     const [isPending, setIsPending] = useState(false);
     // const history = useHistory();
-    const {data:info, loading} = useFetch('http://mutolib-001-site1.dtempurl.com/api/v1/CompanyInfo/CompanyInfo');
+    const {data:info, loading} = useFetch('http://18.193.182.151:8080/api/v1/CompanyInfo/CompanyInfo');
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success',
@@ -38,7 +38,7 @@ const Contactcard = () => {
             emailAddress: email,
             phoneNumber: number
         }
-        const url = 'http://mutolib-001-site1.dtempurl.com/api/v1/ContactUs/CreateMessage'
+        const url = 'http://18.193.182.151:8080/api/v1/ContactUs/CreateMessage'
         fetch(url,
             {
                 method: 'POST',

@@ -14,14 +14,14 @@ import images from '../../constants/images'
                       
                       (<Col lg={4} md={6} sm={12} className='press-col'>
                         <Card className='press-card'>
-                            <Card.Img variant="top" src={require('../../assets/Press Release/Picture '+press.id+'.png')} />
+                            <Card.Img variant="top" src={press.image} />
                             <Card.Body>
                                 <p className='press-date'>{press.date}</p>
-                                <Link to={'/news/'+press.id}> <Card.Title className='press-title'>{press.title}</Card.Title> </Link> 
+                                <Link to={'/news/'+press.title}> <Card.Title className='press-title'>{press.title}</Card.Title> </Link> 
                                 <Card.Text className='press-content' dangerouslySetInnerHTML={{ __html: truncate(press.content) }}>
                                 
                                 </Card.Text>
-                                <Link className='read-more' to={'/news/'+press.id} variant="primary">Read More</Link>
+                                <Link className='read-more' to={'/news/'+press.title} variant="primary">Read More</Link>
                             </Card.Body>
                             </Card>
                         </Col> )
