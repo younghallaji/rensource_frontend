@@ -1,29 +1,44 @@
 import React from 'react';
-import { Card, Container } from 'react-bootstrap';
+import { Card, Container, Spinner } from 'react-bootstrap';
 import Header from '../Header/Header';
 import SingleCaseHero from './SingleCaseHero';
 import SingleCaseDetails from './SingleCaseDetails';
 import Footer from '../Footer/Footer';
 import images from '../../constants/images';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import useFetch from '../../constants/useFetch';
 
 const SingleCaseStudyOne = () => {
+  const {id} = useParams();
+  const {data:info, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/Projects/Project?Id='+id)
+  
   return (
     <>
         <Container>
             <Header />
         </Container>
-        <SingleCaseHero topic={'Our Project'} title={'Powering Valentine Chickens with a 120kWp Solar PV'}/>
-        
-        <SingleCaseDetails 
-            image={images.valentineHero}
-            // challengeTitle={'Increase Power Reliability; Savings on Diesel'}
-            challengeContent={'Valentine Chickens is a poultry farm in Shonga, Kwara State with a processing plant that slaughters up to 25,000 birds per day and a feed mill producing 64mt of feed per day and providing frozen chicken to various parts of the country. Rensource deployed a 120kWp solar PV in one of the sites at Valentine Chicken for the purpose of “proof of concept” with the intention to develop a 5.128MW Solar-Gas Hybrid. '}
-            // solutionTitle={'New Power Installed'}
-            solutionContent={'The installation comprised 4 rows of roof-mounted 335W Canadian Solar PV panels, and 1 Huawei PV inverter (100kW rating) installed for a total of 120kWp together with a back-up diesel generator.'}
+        {loading &&
+          <Container>
+              <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+              </Spinner>
+          </Container>
+        }
+        {
+          info &&
+          <>
+            <SingleCaseHero topic={'Our Project'} title={info.title}/>
+            <SingleCaseDetails 
+                image={info.image}
+                challengeContent={info.projectOverview}
+                // solutionTitle={'New Power Installed'}
+                solutionContent={info.projectOverview}
 
-            practicalContent={'Our operations and maintenance team provides support on-site and remotely 24/7 to ensure operations run well. We gave our client access to a platform that helps them monitor their energy consumption and savings remotely to provide comfort. Our client’s diesel consumption on the site is reduced by approximately 30%. The solar PV plant will generate up to 160MWh of energy while saving up to 70 tonnes of CO2 emissions per year, improving air quality in Nigeria. '}
-          />
+                practicalContent={info.projectOverview}
+              />
+          </>
+        }
+        
           <Container className='next-case-study'>
             <hr />
             <div className="next">

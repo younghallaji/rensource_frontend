@@ -261,6 +261,10 @@ h2, .title, .press-title, .press-heading, .press-title, .contact-form .btn{
   background-size: 700px 700px;
   
 }
+.project-card img{
+  height: 240px;
+  width: 100%;
+}
 .project-card{
   height: auto;
   padding-bottom: 20px;

@@ -1,11 +1,13 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import images from '../../constants/images';
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import useFetch from '../../constants/useFetch';
 
 const Partner = () => {
+  const {data:partners, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/Partners/AllPartner')
   const settings = {
     dots: false,
     infinite: true,
@@ -46,20 +48,22 @@ const Partner = () => {
     <Container className='partner-wrapper'>
         <center>
             <h2>Our Partners</h2>
+
+            {error && <div>{error}</div>}
+          {loading && <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner>}
         
         
         <Row>
           <Slider {...settings}>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.huawei} /> </Col>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.bos} /> </Col>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.canadianSolar} /> </Col>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.jinkoSolar} /> </Col>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.schneider} /> </Col>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.victronEnergy} /> </Col>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.jaSolar} /> </Col>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.cenergy} /> </Col>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.sma} /> </Col>
-            <Col sm className='partner-col'> <img alt='rensource-partner' src={images.sungrow} /> </Col>
+          {partners && 
+                partners.reverse().map(partner => (
+                  <Col sm className='partner-col'> <img alt='rensource-partner' src={partner.image} /> </Col>
+            
+                ))
+            }
+           
           </Slider>
         </Row>
         

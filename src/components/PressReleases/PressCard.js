@@ -16,7 +16,7 @@ import images from '../../constants/images'
                         <Card className='press-card'>
                             <Card.Img variant="top" src={press.image} />
                             <Card.Body>
-                                <p className='press-date'>{press.date}</p>
+                                <p className='press-date'>{press.dateCreated.split("T")[0]}</p>
                                 <Link to={'/news/'+press.title}> <Card.Title className='press-title'>{press.title}</Card.Title> </Link> 
                                 <Card.Text className='press-content' dangerouslySetInnerHTML={{ __html: truncate(press.content) }}>
                                 

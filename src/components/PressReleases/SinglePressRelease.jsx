@@ -16,11 +16,11 @@ import ReactTooltip from "react-tooltip";
 
 const SinglePressRelease = () => {
     const {id} = useParams();
+    const url = window.location.href
     const {data:info, loading} = useFetch('http://18.193.182.151:8080/api/v1/PressRelease/PressReleaseByTitle?title='+id);
     const {data:pressRelease, error} = useFetch('http://18.193.182.151:8080/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
     
     const handleCopy = () => {
-        const url = `respaced.in/rensource/index.html#/news/${id}`
         navigator.clipboard.writeText(url).then(function() {
             let copyBtn = document.getElementById('copy');
             copyBtn.setAttribute("event", "click");
@@ -52,7 +52,7 @@ const SinglePressRelease = () => {
             info &&
             <>
            
-           <SingleCaseHero title={info.title} topic={'News'} date={info.date}/>
+           <SingleCaseHero title={info.title} topic={'News'} date={info.dateCreated.split("T")[0]}/>
                 <div className="press-content-single-press-release" > 
 
                 <Card.Img variant="top" src={info.image} />
@@ -80,9 +80,9 @@ const SinglePressRelease = () => {
                         <FiCopy/> Copy Link 
                     </span>
                     <IconContext.Provider value={{ color:'#98A2B3'}}>
-                        <a target={'_blank'} href={"https://twitter.com/share?text="+ info.title+"&url=respaced.in/rensource/index.html#/news/"+id}><FaTwitter className='m-1 press-icon'/></a>
-                        <FaInstagram className='m-1 press-icon'/>
-                        <FaLinkedinIn className='m-1 press-icon'/>
+                        <a target={'_blank'} href={"https://twitter.com/share?text="+ info.title+"&url="+url}><FaTwitter className='m-1 press-icon'/></a>
+                        {/* <FaInstagram className='m-1 press-icon'/>
+                        <FaLinkedinIn className='m-1 press-icon'/> */}
                     </IconContext.Provider>
                 </div>
             </Col>

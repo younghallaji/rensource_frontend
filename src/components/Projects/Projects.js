@@ -1,22 +1,30 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import images from '../../constants/images';
+import useFetch from '../../constants/useFetch';
 import ProjectCard from './ProjectCard';
 
 const Projects = () => {
+  const {data:projects, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/Projects/AllProjects?pageNumber=1&pageSize=6')
   return (
     <Container fluid='md' className='project-wrapper'>
         <center className="project-heading">
             <h2>Our Projects</h2>
             <p>Powering Africa</p>
         </center>
+        {error && <div>{error}</div>}
+          {loading && <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner>}
         <Row>
-            <ProjectCard projectImg={images.projectOne} content='700kWp Solar-Powered PV Plant at Premium Poultry Farms, Kuje, Abuja.'/>
-
-            <ProjectCard projectImg={images.projectTwo} content='120kWp Solar PV Installation at Valentine Chicken, Kwara State.'/>
-
-            <ProjectCard projectImg={images.projectThree} content='40kWp Solar PV Installation at Rubis Energy, Nairobi, Kenya. '/>
+        {projects && 
+                projects.reverse().map(project => (
+                  <ProjectCard projectImg={project.image} content={project.title}/>
+            
+                ))
+            }
+            
         </Row>
         <center className='all-projects-btn mt-5 '>
             <Link to={'/our-projects'} className='home-button' href='/'>View all</Link>

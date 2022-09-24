@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Spinner } from 'react-bootstrap'
+import { Container, Row, Spinner, Form } from 'react-bootstrap'
 import Header from '../Header/Header';
 import PressCard from './PressCard';
 import Footer from '../Footer/Footer';
@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 
 
 const PressReleasPage = () => {
+  const [orderID, setOrderID] = useState(2)
   const [loading, setLoading] = useState(true)
   const [count, setCount] = useState()
   const [pressRelease, setPressRelease] = useState()
@@ -29,7 +30,26 @@ const PressReleasPage = () => {
   const fetchPress = async (currentPage) =>{
     const res = await fetch(`http://18.193.182.151:8080/api/v1/PressRelease/AllPressRelease?pageNumber=${currentPage}&pageSize=6`);
       const data = await res.json()
-      return data.data;
+      if (orderID == 1) {
+        return data.data;
+      } else {
+        return data.data.reverse();
+      }
+      
+  }
+
+  const handleFilter = async (order) => {
+    setOrderID(order)
+    const newPage = await fetchPress(1)
+    console.log(order)
+    console.log(newPage.reverse())
+    if(order == 1){
+      setPressRelease(newPage)
+    }else{
+      setPressRelease(newPage.reverse())
+    }
+    
+
   }
 
   const handlePageChange = async (data) => {
@@ -49,7 +69,26 @@ const PressReleasPage = () => {
         <SingleCaseHero title={'News'} topic={''}/>
         <div className='press-bg'>
         <Container>
-            <Filter />
+            <div className='filter-wrapper'>
+        <div className='search'> 
+            <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Control type="text" placeholder='Search'/>
+                </Form.Group>
+            </Form>
+        </div>
+        <div className='sort'> 
+            <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Select aria-label="Default select example" onChange={(e) => handleFilter(e.target.value)}>
+                        <option disabled>Filter News</option>
+                        <option value={1}>Newer first</option>
+                        <option value={2}>Older first</option>
+                    </Form.Select> 
+                </Form.Group>
+            </Form>
+        </div>
+    </div>
             <h2 className='all-press'>All News</h2>
             <Row>
           {loading && <Spinner animation="border" role="status">

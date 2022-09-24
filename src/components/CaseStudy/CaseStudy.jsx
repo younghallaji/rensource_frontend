@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
+import useFetch from '../../constants/useFetch';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import CaseHero from './CaseHero';
@@ -7,6 +8,7 @@ import CaseOne from './CaseOne';
 import CaseTwo from './CaseTwo';
 
 const CaseStudy = () => {
+  const {data:projects, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/Projects/AllProjects?pageNumber=1&pageSize=3')
   return (
     <>
         <Container>
@@ -15,8 +17,24 @@ const CaseStudy = () => {
         <CaseHero title={'Our Projects'}/>
         <div className='caseStudy'>
             <Container >
-                <CaseOne />
-                <CaseTwo />
+                {error && <div>{error}</div>}
+                {loading && 
+                  <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                }
+              {projects && 
+                      projects.reverse().map((project, index) => 
+                      
+                        (index % 2 == 0) ?
+                          <CaseOne key={index} title={project.title} desc={project.description} image={project.image} id={project.id}/>
+                          :
+                          <CaseTwo key={index} title={project.title} desc={project.description} image={project.image} id={project.id}/>
+                        
+                        
+                  
+                      )
+                  }
             </Container>
         </div>
         <Footer />
