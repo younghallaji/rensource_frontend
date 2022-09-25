@@ -15,6 +15,7 @@ const PressReleasPage = () => {
   const [loading, setLoading] = useState(true)
   const [count, setCount] = useState()
   const [pressRelease, setPressRelease] = useState()
+  const [search, setSearch] = useState()
   useEffect(()=>{
     const getPress = async () =>{
       const res = await fetch('https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=6');
@@ -22,7 +23,6 @@ const PressReleasPage = () => {
       setPressRelease(data.data);
       setLoading(false)
       setCount(data.totalData)
-      console.log(data)
     }
     getPress()
   }, [])
@@ -36,6 +36,17 @@ const PressReleasPage = () => {
         return data.data.reverse();
       }
       
+  }
+
+  const handleSearch = async (e) => {
+    e.preventDefault()
+    const res = await fetch(`https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=20`)
+    let result = await res.json()
+    result = result.data
+    console.log(result)
+    result = result.filter((news)=>news.title == search)
+    setPressRelease(result)
+
   }
 
   const handleFilter = async (order) => {
@@ -71,9 +82,9 @@ const PressReleasPage = () => {
         <Container>
             <div className='filter-wrapper'>
         <div className='search'> 
-            <Form>
+            <Form onSubmit={handleSearch}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="text" placeholder='Search'/>
+                    <Form.Control value={search} onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='Search'/>
                 </Form.Group>
             </Form>
         </div>
