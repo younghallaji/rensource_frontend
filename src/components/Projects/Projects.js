@@ -6,7 +6,7 @@ import useFetch from '../../constants/useFetch';
 import ProjectCard from './ProjectCard';
 
 const Projects = () => {
-  const {data:projects, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/Projects/AllProjects?pageNumber=1&pageSize=6')
+  const {data:projects, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/Projects/AllProjects?pageNumber=1&pageSize=6')
   return (
     <Container fluid='md' className='project-wrapper'>
         <center className="project-heading">

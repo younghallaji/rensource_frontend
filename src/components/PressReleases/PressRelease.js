@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import useFetch from '../../constants/useFetch';
 
 const PressRelease = () => {
-  const {data:pressRelease, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
+  const {data:pressRelease, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
  
   
 

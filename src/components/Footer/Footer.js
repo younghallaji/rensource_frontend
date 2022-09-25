@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import useFetch from '../../constants/useFetch';
  
 const Footer = () => {
-  const {data:info, loading} = useFetch('http://18.193.182.151:8080/api/v1/CompanyInfo/CompanyInfo');
+  const {data:info, loading} = useFetch('https://18.193.182.151:4431/api/v1/CompanyInfo/CompanyInfo');
   return (
     <div className='footer'>
         <Container>

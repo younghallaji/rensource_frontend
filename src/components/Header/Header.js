@@ -1,56 +1,45 @@
-import React from 'react'
-import { Navbar, Nav } from 'react-bootstrap'
+import React, { useRef } from 'react'
+import { Navbar, Nav, Button } from 'react-bootstrap'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import images from '../../constants/images'
 import { Link } from 'react-router-dom'
 import './header.css';
 
 const Header = () => {
+  const navRef = useRef();
+  const showNavbar = () => {
+    navRef.current.classList.toggle("responsive-nav")
+  }
   return (
-    <>
-        {/* style={{paddingTop:'90px'}} , fixed='top'*/}
-        <Navbar  expand="lg" style={{paddingTop:'40px'}} >
-          <Navbar.Brand className='nav-brand'>
-            <Link to={'/'}><img src={images.rensource} alt='Rensource-Logo'/></Link>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls='basic-navbar-nav' />
-              <Navbar.Collapse id='basic-navbar-nav'>
-              <Nav className="me-auto justify-content-end">
-                  <Nav.Link >
-                    <Link className='header-link' to='/'>Home</Link>
-                  </Nav.Link>
+    <header className='nav-header'>
+        <h3 className='nav-brand'>
+          <Link to={'/'}><img src={images.rensource} alt='Rensource-Logo'/></Link>
+        </h3>
 
-                
-                <Nav.Link ><Link to='/about' className='header-link'>About Us</Link></Nav.Link>
-                
-
-                
-                    <Nav.Link><Link to='/our-projects' className='header-link'>Our Projects</Link></Nav.Link>
-                
-
-                
-                    <Nav.Link><Link to='/offering' className='header-link'>Our Offerings</Link></Nav.Link>
-                
-
-                
-                    <Nav.Link><Link to='/news' className='header-link'>News</Link></Nav.Link>
-                
-
-                
-                    {/* <Nav.Link><Link to='/blog' className='header-link'>Blog</Link></Nav.Link> */}
-                
-
-                
-                    <Nav.Link><Link to='/faqs' className='header-link'>FAQ</Link></Nav.Link>
-                
-
-                
-                    <Nav.Link><Link to='/contact' className='header-link'>Contact us</Link></Nav.Link>
-                
-                
-              </Nav>
-              </Navbar.Collapse>
-      </Navbar>
-    </>
+        <nav className='nav-wrapper nav-wrapper-web' ref={navRef}>
+            <h3 className='nav-brand-mobile'>
+              <Link to={'/'}><img src={images.footerLogo} alt='Rensource-Logo'/></Link>
+              <Button className='close-menu' onClick={showNavbar}>
+                <FaTimes/>
+              </Button>
+              
+            </h3>
+              
+              <Link to='/'><a className='header-link'>Home</a></Link>
+              <Link to='/about'><a className='header-link'>About</a></Link>
+              <Link to='/our-projects'><a className='header-link'>Our Projects</a></Link>
+              <Link to='/offering'><a className='header-link'>Our Offerings</a></Link>
+              <Link to='/news'><a className='header-link'>News</a></Link>
+              {/* <Link to='/blog'><a className='header-link'>Blog</a></Link> */}
+              <Link to='/faqs'><a className='header-link'>FAQ</a></Link>
+              <Link to='/contact'><a className='header-link'>Contact Us</a></Link>
+              
+        </nav>
+        
+        <Button className=' open-menu' onClick={showNavbar}>
+            <FaBars/>
+        </Button>
+    </header>
   )
 }
 

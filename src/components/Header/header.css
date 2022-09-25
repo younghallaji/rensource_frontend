@@ -1,0 +1,130 @@
+.nav-header{
+    display: flex;
+    padding-top: 40px;
+    height: 80px;
+}
+li{
+    list-style: none;
+}
+
+.open-menu, .close-menu{
+    background-color: transparent;
+    color: #121212;
+    border: none;
+    font-size: 20px;
+    padding: 0px;
+    visibility: hidden;
+    opacity: 0;
+    outline: none;
+}
+.open-menu:hover, .close-menu:hover, .open-menu::after, .close-menu::after{
+    background-color: transparent;
+    color: #121212;
+    border: none;
+    font-size: 30px;
+}
+.nav-wrapper{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.nav__menu{
+    display: flex;
+}
+.nav-brand-mobile{
+    visibility: hidden;
+    display: none;
+}
+.nav-header .btn:active:focus, .btn:active, .btn:focus{
+    background-color: transparent;
+    color: #121212;
+    border: none;
+    box-shadow: none;
+}
+@media screen and (max-width:992px) {
+    .open-menu{
+        visibility: visible;
+        opacity: 1;
+        padding-top: 0px;
+        font-size: 30px;
+    }
+    button .open-menu{
+        width: 30px;
+        height: 30px;
+    }
+    .nav-brand-mobile{
+        padding: 20px;
+        visibility: visible;
+        display: flex;
+        justify-content: space-between;
+    }
+     .nav-brand{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .close-menu{
+        visibility: visible;
+        opacity: 1;
+        padding-top: 0px;
+        color: #fff;
+        right: 10px;
+        position: fixed;
+        font-size: 30px;
+    }
+    .close-menu:hover{
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        font-size: 30px;
+    }
+    .nav-header{
+        justify-content: space-between;
+    }
+    .nav-wrapper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        background-color: #002153;
+        transition: ease-in 1s;
+        transform: translateX(100%);
+    }
+
+    
+    
+    @keyframes fadeInOpacity {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+    .nav-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    
+    .nav-wrapper .header-link{
+        color: #fff;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    header .responsive-nav{
+        transform: none;
+    }
+
+}

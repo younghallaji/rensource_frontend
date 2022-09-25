@@ -8,7 +8,7 @@ import CaseOne from './CaseOne';
 import CaseTwo from './CaseTwo';
 
 const CaseStudy = () => {
-  const {data:projects, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/Projects/AllProjects?pageNumber=1&pageSize=3')
+  const {data:projects, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/Projects/AllProjects?pageNumber=1&pageSize=3')
   return (
     <>
         <Container>

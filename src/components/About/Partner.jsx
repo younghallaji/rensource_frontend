@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import useFetch from '../../constants/useFetch';
 
 const Partner = () => {
-  const {data:partners, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/Partners/AllPartner')
+  const {data:partners, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/Partners/AllPartner')
   const settings = {
     dots: false,
     infinite: true,

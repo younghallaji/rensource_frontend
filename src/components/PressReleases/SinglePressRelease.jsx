@@ -17,8 +17,8 @@ import ReactTooltip from "react-tooltip";
 const SinglePressRelease = () => {
     const {id} = useParams();
     const url = window.location.href
-    const {data:info, loading} = useFetch('http://18.193.182.151:8080/api/v1/PressRelease/PressReleaseByTitle?title='+id);
-    const {data:pressRelease, error} = useFetch('http://18.193.182.151:8080/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
+    const {data:info, loading} = useFetch('https://18.193.182.151:4431/api/v1/PressRelease/PressReleaseByTitle?title='+id);
+    const {data:pressRelease, error} = useFetch('https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
     
     const handleCopy = () => {
         navigator.clipboard.writeText(url).then(function() {

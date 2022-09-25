@@ -10,7 +10,7 @@ import useFetch from '../../constants/useFetch';
 
 const SingleCaseStudyOne = () => {
   const {id} = useParams();
-  const {data:info, loading, error} = useFetch('http://18.193.182.151:8080/api/v1/Projects/Project?Id='+id)
+  const {data:info, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/Projects/Project?Id='+id)
   
   return (
     <>

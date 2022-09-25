@@ -17,7 +17,7 @@ const PressReleasPage = () => {
   const [pressRelease, setPressRelease] = useState()
   useEffect(()=>{
     const getPress = async () =>{
-      const res = await fetch('http://18.193.182.151:8080/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=6');
+      const res = await fetch('https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=6');
       const data = await res.json()
       setPressRelease(data.data);
       setLoading(false)
@@ -28,7 +28,7 @@ const PressReleasPage = () => {
   }, [])
 
   const fetchPress = async (currentPage) =>{
-    const res = await fetch(`http://18.193.182.151:8080/api/v1/PressRelease/AllPressRelease?pageNumber=${currentPage}&pageSize=6`);
+    const res = await fetch(`https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=${currentPage}&pageSize=6`);
       const data = await res.json()
       if (orderID == 1) {
         return data.data;
