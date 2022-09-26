@@ -19,9 +19,9 @@ const Header = () => {
         <nav className='nav-wrapper nav-wrapper-web' ref={navRef}>
             <h3 className='nav-brand-mobile'>
               <Link to={'/'}><img src={images.footerLogo} alt='Rensource-Logo'/></Link>
-              <Button className='close-menu' onClick={showNavbar}>
+              <div className='close-menu' onClick={showNavbar}>
                 <FaTimes/>
-              </Button>
+              </div>
               
             </h3>
               

@@ -49,7 +49,7 @@ li{
         font-size: 30px;
         cursor: pointer;
     }
-    button .open-menu{
+    div .open-menu{
         width: 30px;
         height: 30px;
     }
@@ -66,6 +66,7 @@ li{
     }
     .close-menu{
         visibility: visible;
+        margin-top: -9px;
         opacity: 1;
         padding-top: 0px;
         color: #fff;
@@ -93,21 +94,21 @@ li{
         justify-content: center;
         gap: 1.5rem;
         background-color: #002153;
-        transition: ease-in 1s;
+        transition: ease-in-out 30ms;
         transform: translateX(100%);
         z-index: 1;
     }
 
     
     
-    @keyframes fadeInOpacity {
+    /* @keyframes fadeInOpacity {
         0% {
             opacity: 0;
         }
         100% {
             opacity: 1;
         }
-    }
+    } */
 
 
     .nav-wrapper{

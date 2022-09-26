@@ -159,10 +159,7 @@
     .slick-slider{
         margin: 0px;
     }
-    .partners-wrapper{
-        width: 80%;
-        display: flex;
-    }
+    
     .about-home label{
         margin-top: 50px;
     }
@@ -193,7 +190,10 @@
         height: auto;
         padding-right: 0px;
     }
-
+    .partners-wrapper{
+        width: 85%;
+        display: flex;
+    }
     .about-home-col-2{
         padding-top: 35px;
         width: auto;
