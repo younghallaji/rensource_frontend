@@ -1,21 +1,11 @@
-
-
-
-
-
-
-
-
-
-
 import React from 'react'
 import { Container, Row , Spinner} from 'react-bootstrap'
-import images from '../../constants/images'
 import ExecutiveCard from './ExecutiveCard'
 import useFetch from '../../constants/useFetch'
+import baseurl from '../../constants/baseurl'
 
 const ExecutiveTeam = () => {
-    const {data:executives, loading} = useFetch('http://18.193.182.151:8080/api/v1/ExecTeamCategory/AllExecCategory');
+    const {data:executives, loading} = useFetch(`https://18.193.182.151:4431/api/v1/ExecTeamCategory/AllExecCategory`);
     
   return (
     // <>

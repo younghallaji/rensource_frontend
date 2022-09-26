@@ -6,9 +6,10 @@ import FaqsAcordion from './FaqsAcordion'
 import './faq.css'
 import SingleCaseHero from '../SingleCaseStudy/SingleCaseHero'
 import useFetch from '../../constants/useFetch'
+import baseurl from '../../constants/baseurl'
 
 const Faqs = () => {
-    const {data:faqs, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/FAQs/AllFAQ');
+    const {data:faqs, loading, error} = useFetch(`https://18.193.182.151:4431/api/v1/FAQs/AllFAQ`);
  
   return (
     <>
