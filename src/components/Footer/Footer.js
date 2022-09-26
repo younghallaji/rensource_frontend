@@ -5,9 +5,10 @@ import images from '../../constants/images';
 import { IconContext } from 'react-icons';
 import { Link } from 'react-router-dom';
 import useFetch from '../../constants/useFetch';
+import { Url } from '../../constants/baseurl';
  
 const Footer = () => {
-  const {data:info, loading} = useFetch('https://18.193.182.151:4431/api/v1/CompanyInfo/CompanyInfo');
+  const {data:info, loading} = useFetch(Url+'CompanyInfo/CompanyInfo');
   return (
     <div className='footer'>
         <Container>
