@@ -22,8 +22,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // 
   // </HashRouter>
-  // <BrowserRouter>
-  <HashRouter>
+  <BrowserRouter>
+  {/* <HashRouter> */}
     <ScrollToTop>
       <Routes>
         <Route path='/' element={<App/>}/>
@@ -40,7 +40,7 @@ root.render(
         <Route path='/project/:id' element={<SingleCaseStudyOne/>}/>
       </Routes>
       </ScrollToTop>
-    </HashRouter>
-      // </BrowserRouter> 
+    {/* </HashRouter> */}
+   </BrowserRouter> 
 );
 reportWebVitals();
