@@ -156,6 +156,13 @@
     .about-row .second-col{
         display: none;
     }
+    .slick-slider{
+        margin: 0px;
+    }
+    .partners-wrapper{
+        width: 80%;
+        display: flex;
+    }
     .about-home label{
         margin-top: 50px;
     }

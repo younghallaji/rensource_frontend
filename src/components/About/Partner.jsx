@@ -5,9 +5,10 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import useFetch from '../../constants/useFetch';
+import { Url } from '../../constants/baseurl';
 
 const Partner = () => {
-  const {data:partners, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/Partners/AllPartner')
+  const {data:partners, loading, error} = useFetch(Url+'Partners/AllPartner')
   const settings = {
     dots: false,
     infinite: true,
@@ -55,7 +56,7 @@ const Partner = () => {
     </Spinner>}
         
         
-        <Row>
+        <Row className='partners-wrapper'>
           <Slider {...settings}>
           {partners && 
                 partners.reverse().map(partner => (

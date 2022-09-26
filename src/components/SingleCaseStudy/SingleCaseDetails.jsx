@@ -4,7 +4,7 @@ import HeroImage from './HeroImage'
 
 const SingleCaseDetails = ({ challengeContent, solutionContent, practicalContent, image}) => {
   return (
-    <div className='row'>
+    <div className='row single-case-details'>
         <div className='case-details'>
         
         <Container className='hero-image' ><HeroImage image={image} />

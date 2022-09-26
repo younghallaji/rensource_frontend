@@ -2,10 +2,10 @@ import React from 'react'
 import { Container, Row , Spinner} from 'react-bootstrap'
 import ExecutiveCard from './ExecutiveCard'
 import useFetch from '../../constants/useFetch'
-import baseurl from '../../constants/baseurl'
+import {Url} from '../../constants/baseurl'
 
 const ExecutiveTeam = () => {
-    const {data:executives, loading} = useFetch(`https://18.193.182.151:4431/api/v1/ExecTeamCategory/AllExecCategory`);
+    const {data:executives, loading} = useFetch(`${Url}ExecTeamCategory/AllExecCategory`);
     
   return (
     // <>

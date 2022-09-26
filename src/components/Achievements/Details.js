@@ -9,7 +9,7 @@ const Details = () => {
             <div className='enerdeal-col-1'></div>
               <img className='enerdeal-img' src={images.enerdealImg} alt='rensource-enerdeal' />
               <img className='enerdeal-icon' src={images.enerdealIcon} alt='rensource-enerdeal' />
-            </div>
+          </div>
           <div className='second-col enerdeal'>
           <p className='enerdeal-title'>Enerdeal</p>
             <h2>Connecting Developers and Investors</h2>

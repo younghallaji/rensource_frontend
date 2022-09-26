@@ -45,7 +45,7 @@
 .offering-bg{
     background: url('../../assets/contact-ellipse\ .svg');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 100%;
     background-position: right;
     padding-top: 5px;
 }
@@ -68,5 +68,9 @@
     .offering-content{
         margin: 20px 10px;
         padding: 10px;
+    }
+    .offering-bg{
+        width: 96%;
+        margin-left: 1px;
     }
 }

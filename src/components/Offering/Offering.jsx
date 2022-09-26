@@ -15,7 +15,7 @@ const Offering = () => {
         </Container>
         <SingleCaseHero title={'Offerings'}/>
 
-        <div className='offering-bg'>
+        <div className='offering-bg'> 
         <Container>
         <Row className='offering-row1' >
           <OfferingCard title={'Solar PV (+ batteries)'}

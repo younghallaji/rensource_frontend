@@ -6,9 +6,10 @@ import Header from '../Header/Header';
 import CaseHero from './CaseHero';
 import CaseOne from './CaseOne';
 import CaseTwo from './CaseTwo';
+import { Url } from '../../constants/baseurl';
 
 const CaseStudy = () => {
-  const {data:projects, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/Projects/AllProjects?pageNumber=1&pageSize=3')
+  const {data:projects, loading, error} = useFetch(Url + 'Projects/AllProjects?pageNumber=1&pageSize=3')
   return (
     <>
         <Container>

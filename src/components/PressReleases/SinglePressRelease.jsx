@@ -13,12 +13,14 @@ import { Link } from 'react-router-dom'
 import useFetch from '../../constants/useFetch'
 import { useState } from 'react'
 import ReactTooltip from "react-tooltip";
+import { Url } from '../../constants/baseurl'
 
 const SinglePressRelease = () => {
+    const childUrl = 'PressRelease/AllPressRelease?pageNumber=1&pageSize=3'
     const {id} = useParams();
     const url = window.location.href
-    const {data:info, loading} = useFetch('https://18.193.182.151:4431/api/v1/PressRelease/PressReleaseByTitle?title='+id);
-    const {data:pressRelease, error} = useFetch('https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
+    const {data:info, loading} = useFetch(`${Url}PressRelease/PressReleaseByTitle?title=${id}`);
+    const {data:pressRelease, error} = useFetch(`${Url}${childUrl}`);
     
     const handleCopy = () => {
         navigator.clipboard.writeText(url).then(function() {
@@ -50,7 +52,7 @@ const SinglePressRelease = () => {
 
             {
             info &&
-            <>
+            <> 
            
            <SingleCaseHero title={info.title} topic={'News'} date={info.dateCreated.split("T")[0]}/>
                 <div className="press-content-single-press-release" > 

@@ -9,6 +9,7 @@ import { IconContext } from 'react-icons';
 import useFetch from '../../constants/useFetch';
 import Swal from 'sweetalert2'
 import { useState } from 'react';
+import { Url } from '../../constants/baseurl';
 // import {useHistory} from 'react-router-dom';
 
 const Contactcard = () => {
@@ -19,7 +20,7 @@ const Contactcard = () => {
     const [message, setMessage] = useState();
     const [isPending, setIsPending] = useState(false);
     // const history = useHistory();
-    const {data:info, loading} = useFetch('https://18.193.182.151:4431/api/v1/CompanyInfo/CompanyInfo');
+    const {data:info, loading} = useFetch(Url+'CompanyInfo/CompanyInfo');
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success',
@@ -38,7 +39,7 @@ const Contactcard = () => {
             emailAddress: email,
             phoneNumber: number
         }
-        const url = 'https://18.193.182.151:4431/api/v1/ContactUs/CreateMessage'
+        const url = Url+'ContactUs/CreateMessage'
         fetch(url,
             {
                 method: 'POST',

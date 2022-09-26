@@ -153,7 +153,7 @@ a{
     margin-bottom: 16px;
     color: #121212;
 }
-.next-case-img img{
+.next-case-img img{ 
     width: 100%;
 }
 .case-details .challenge-title, .solution-title{
@@ -224,6 +224,10 @@ a{
     .caseOne-img{
         display: none;
     }
+    .caseOne-content .title{
+        width: 100%;
+        height: auto;
+    }
     .hero-banner h2{
         font-style: normal;
         font-weight: 700;
@@ -234,6 +238,7 @@ a{
         letter-spacing: -0.02em;
         margin-top: 12px;
         color: #fff;
+        padding: 0px 10px;
     }
     .challenge-content, .challenge-title{
         width: auto;
@@ -248,5 +253,8 @@ a{
     }
     .next-case-img{
         display: none;
+    }
+    .single-case-details{
+        width: 100%;
     }
 }

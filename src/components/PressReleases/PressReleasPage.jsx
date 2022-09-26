@@ -8,6 +8,7 @@ import Filter from './Filter';
 import ReactPaginate from 'react-paginate'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Url } from '../../constants/baseurl';
 
 
 const PressReleasPage = () => {
@@ -18,7 +19,7 @@ const PressReleasPage = () => {
   const [search, setSearch] = useState()
   useEffect(()=>{
     const getPress = async () =>{
-      const res = await fetch('https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=6');
+      const res = await fetch(Url + 'PressRelease/AllPressRelease?pageNumber=1&pageSize=6');
       const data = await res.json()
       setPressRelease(data.data);
       setLoading(false)
@@ -28,7 +29,7 @@ const PressReleasPage = () => {
   }, [])
 
   const fetchPress = async (currentPage) =>{
-    const res = await fetch(`https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=${currentPage}&pageSize=6`);
+    const res = await fetch(`${Url}PressRelease/AllPressRelease?pageNumber=${currentPage}&pageSize=6`);
       const data = await res.json()
       if (orderID == 1) {
         return data.data;
@@ -40,7 +41,7 @@ const PressReleasPage = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault()
-    const res = await fetch(`https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=20`)
+    const res = await fetch(`${Url}PressRelease/AllPressRelease?pageNumber=1&pageSize=20`)
     let result = await res.json()
     result = result.data
     console.log(result)

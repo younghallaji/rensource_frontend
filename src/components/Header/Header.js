@@ -36,9 +36,9 @@ const Header = () => {
               
         </nav>
         
-        <Button className=' open-menu' onClick={showNavbar}>
+        <div className=' open-menu' onClick={showNavbar}>
             <FaBars/>
-        </Button>
+        </div>
     </header>
   )
 }

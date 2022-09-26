@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import images from '../../constants/images';
 import useFetch from '../../constants/useFetch';
 import ProjectCard from './ProjectCard';
+import { Url } from '../../constants/baseurl';
 
 const Projects = () => {
-  const {data:projects, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/Projects/AllProjects?pageNumber=1&pageSize=6')
+  const {data:projects, loading, error} = useFetch(Url+'Projects/AllProjects?pageNumber=1&pageSize=6')
   return (
     <Container fluid='md' className='project-wrapper'>
         <center className="project-heading">

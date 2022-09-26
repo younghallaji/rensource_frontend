@@ -4,9 +4,10 @@ import { Container, Row, Spinner } from 'react-bootstrap';
 import images from '../../constants/images';
 import { Link } from 'react-router-dom';
 import useFetch from '../../constants/useFetch';
+import { Url } from '../../constants/baseurl';
 
 const PressRelease = () => {
-  const {data:pressRelease, loading, error} = useFetch('https://18.193.182.151:4431/api/v1/PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
+  const {data:pressRelease, loading, error} = useFetch(Url+'PressRelease/AllPressRelease?pageNumber=1&pageSize=3');
  
   
 

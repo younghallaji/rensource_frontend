@@ -45,8 +45,9 @@ li{
     .open-menu{
         visibility: visible;
         opacity: 1;
-        padding-top: 0px;
+        margin-top: -9px;
         font-size: 30px;
+        cursor: pointer;
     }
     button .open-menu{
         width: 30px;
@@ -82,7 +83,7 @@ li{
         justify-content: space-between;
     }
     .nav-wrapper{
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         height: 100%;
@@ -94,6 +95,7 @@ li{
         background-color: #002153;
         transition: ease-in 1s;
         transform: translateX(100%);
+        z-index: 1;
     }
 
     
