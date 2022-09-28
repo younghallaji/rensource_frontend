@@ -20,12 +20,12 @@ import { Link } from 'react-router-dom'
                                   <span>{press.dateCreated.split("T")[0].split("-")[2]} </span>
                                   <span>{months[press.dateCreated.split("T")[0].split("-")[1]-1]}, </span>
                                   <span>{press.dateCreated.split("T")[0].split("-")[0]} </span>
-                                  </p>
-                                <Link to={'/news/'+press.title}> <Card.Title className='press-title'>{press.title}</Card.Title> </Link> 
+                                  </p> 
+                                <Link to={'/news/'+encodeURIComponent(press.title)}> <Card.Title className='press-title'>{press.title}</Card.Title> </Link> 
                                 <Card.Text className='press-content' dangerouslySetInnerHTML={{ __html: truncate(press.content) }}>
                                 
                                 </Card.Text>
-                                <Link className='read-more' to={'/news/'+press.title} variant="primary">Read More</Link>
+                                <Link className='read-more' to={'/news/'+encodeURIComponent(press.title)} variant="primary">Read More</Link>
                             </Card.Body>
                             </Card>
                         </Col> )

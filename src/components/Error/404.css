@@ -1,0 +1,15 @@
+.error{
+    font-size: 100px;
+
+}
+.error-wrapper{
+    margin: 30px 30px;
+}
+@media screen and (max-width: 720px) {
+    .error{
+        font-size: auto;
+    }
+    .error-wrapper h2{
+        font-size: 50px;
+    }
+}

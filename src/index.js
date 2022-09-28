@@ -17,10 +17,11 @@ import Faqs from './components/Faqs/Faqs';
 import SinglePressRelease from './components/PressReleases/SinglePressRelease';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Blog from './components/Blog/Blog';
+import NotFound from './components/Error/404';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  //<HashRouter> </HashRouter>
+  // </HashRouter> <BrowserRouter> 
   <BrowserRouter>
     <ScrollToTop>
       <Routes>
@@ -36,8 +37,9 @@ root.render(
         <Route path='/offering' element={<Offering/>} />
         <Route path='/news/:id' element={<SinglePressRelease/>}/>
         <Route path='/project/:id' element={<SingleCaseStudyOne/>}/>
+        <Route path='*' element={<NotFound/>} />
       </Routes>
       </ScrollToTop>
-   </BrowserRouter>  
+  </BrowserRouter>
 );
 reportWebVitals();

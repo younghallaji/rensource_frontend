@@ -23,7 +23,7 @@ const SinglePressRelease = () => {
     const url = window.location.href
     const {data:info, loading} = useFetch(`${Url}PressRelease/PressReleaseByTitle?title=${id}`);
     const {data:pressRelease, error} = useFetch(`${Url}${childUrl}`);
-    
+    {console.log(id)}
     
     const handleCopy = () => {
         navigator.clipboard.writeText(url).then(function() {
@@ -41,6 +41,7 @@ const SinglePressRelease = () => {
     }
   
     return (
+        
     <>
         <Container>
             <Header/>
