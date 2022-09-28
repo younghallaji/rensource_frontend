@@ -92,9 +92,9 @@ const SinglePressRelease = () => {
                 Copied!
             </ReactTooltip>
                 <div className='justify-content-end'>
-                    <span className="copy-link" id='copy' onClick={handleCopy} >
+                    {/* <span className="copy-link" id='copy' onClick={handleCopy} >
                         <FiCopy/> Copy Link 
-                    </span>
+                    </span> */}
                     <IconContext.Provider value={{ color:'#98A2B3'}}>
                         <a target={'_blank'} href={"https://twitter.com/share?text="+ info.title+"&url="+url}><FaTwitter className='m-1 press-icon'/></a>
                         {/* <FaInstagram className='m-1 press-icon'/>
