@@ -68,6 +68,11 @@ h2, .title, .press-title, .press-heading, .press-title, .contact-form .btn{
 .home-hero{
   display: flex;
   padding-top: 20px;
+  width: 497px;
+  /* border: 1px solid; */
+}
+.home-hero img{
+  width: 100%;
 }
 .home-button:hover, .enerdeal a:hover{
   transition: ease-in-out 1s;
@@ -553,9 +558,7 @@ ul.pagination-wrapper{
     letter-spacing: -0.04em;
     color: #3A3A3A;
   }
-  .home-hero img{
-    display: none;
-  }
+  
   .enerdeal-col-1, .enerdeal-row .first-col, .enerdeal-img{
     display: flex;
     width: 100%;

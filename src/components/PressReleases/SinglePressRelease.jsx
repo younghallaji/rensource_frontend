@@ -6,21 +6,24 @@ import SingleCaseHero from '../SingleCaseStudy/SingleCaseHero'
 import images from '../../constants/images'
 import Footer from '../Footer/Footer'
 import { IconContext } from 'react-icons'
-import {FaTwitter, FaLinkedinIn, FaInstagram} from 'react-icons/fa';
+import {FaTwitter} from 'react-icons/fa';
+// import {FaTwitter, FaLinkedinIn, FaInstagram} from 'react-icons/fa';
 import { FiCopy } from "react-icons/fi";
 import PressCard from './PressCard'
 import { Link } from 'react-router-dom'
 import useFetch from '../../constants/useFetch'
-import { useState } from 'react'
 import ReactTooltip from "react-tooltip";
 import { Url } from '../../constants/baseurl'
 
 const SinglePressRelease = () => {
-    const childUrl = 'PressRelease/AllPressRelease?pageNumber=1&pageSize=3'
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    let rndInt= Math.floor(Math.random() * 2) + 1;
+    const childUrl = `PressRelease/AllPressRelease?pageNumber=${rndInt}&pageSize=3`
     const {id} = useParams();
     const url = window.location.href
     const {data:info, loading} = useFetch(`${Url}PressRelease/PressReleaseByTitle?title=${id}`);
     const {data:pressRelease, error} = useFetch(`${Url}${childUrl}`);
+    
     
     const handleCopy = () => {
         navigator.clipboard.writeText(url).then(function() {
@@ -49,12 +52,21 @@ const SinglePressRelease = () => {
                     <span className="visually-hidden">Loading...</span>
                 </Spinner>
             </Container>}
+        
+        {error && <div>{error}</div>}
 
             {
             info &&
             <> 
            
-           <SingleCaseHero title={info.title} topic={'News'} date={info.dateCreated.split("T")[0]}/>
+           <SingleCaseHero 
+                title={info.title} topic={'News'} 
+                date={<>
+                <span>{info.dateCreated.split("T")[0].split("-")[2]} </span>
+                                  <span>{months[info.dateCreated.split("T")[0].split("-")[1]-1]} </span>
+                                  <span>{info.dateCreated.split("T")[0].split("-")[0]} </span>
+                </>}
+            />
                 <div className="press-content-single-press-release" > 
 
                 <Card.Img variant="top" src={info.image} />
@@ -65,9 +77,10 @@ const SinglePressRelease = () => {
             <Col lg={'5'} sm className='press-tag'>
                 
                 {
+                    (info.tags.length > 0) ?
                     info.tags.split(",").map(tag =>
                         <span className='tag2'>{tag}</span>
-                    )
+                    ): <p></p>
                 }
                 
                 {/* <span className='tag1'>Solar</span>

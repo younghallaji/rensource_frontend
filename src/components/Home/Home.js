@@ -20,7 +20,7 @@ const Home = () => {
                 </Col>
 
                 <Col lg={6} sm={12} className="home-hero ">
-                    <img src={images.heroImg} className='responsive-img' alt="rensource-hero"/>
+                    <img src={images.heroImgTwo} className='responsive-img' alt="rensource-hero"/>
                 </Col>
             </Row>
         </Container>

@@ -40,7 +40,6 @@ const ExecutiveTeam = () => {
     <Container fluid='md' className='executive-content'>
     {loading && <Spinner animation="border" role="status">
       <span className="visually-hidden">Loading...</span></Spinner>}
-    {console.log(executives)}
     {
         
         executives && 

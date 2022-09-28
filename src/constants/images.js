@@ -1,6 +1,7 @@
 import rensource from '../assets/rensource-logo.svg';
 import singlePress from '../assets/Press Release/Image.png';
 import heroImg from '../assets/heroImg.png';
+import heroImgTwo from '../assets/heroImgTwo.png';
 import enerdealImg from '../assets/enerdeal.png';
 import projectOne from '../assets/projectOne.png';
 import projectTwo from '../assets/projectTwo.png';
@@ -41,5 +42,5 @@ import sungrow from '../assets/partners/sungrow.png'
 import cenergy from '../assets/partners/clarke.png'
 
 export default{
-    rensource, heroImg, enerdealImg, projectOne, projectTwo, projectThree, pressOne, pressTwo, pressThree, footerLogo, bos, canadianSolar, huawei, jaSolar, jinkoSolar, schneider, victronEnergy, aboutHero, valentine, poultry, arrow, valentineHero, nextCaseOne, poultryHero, offering, prince, jussi, Michael, Deniss, Adebisi, christopher, Ademola, Luis, Chris, PrinceBoard, singlePress, enerdealIcon, sma, sungrow, cenergy
+    rensource, heroImg, heroImgTwo, enerdealImg, projectOne, projectTwo, projectThree, pressOne, pressTwo, pressThree, footerLogo, bos, canadianSolar, huawei, jaSolar, jinkoSolar, schneider, victronEnergy, aboutHero, valentine, poultry, arrow, valentineHero, nextCaseOne, poultryHero, offering, prince, jussi, Michael, Deniss, Adebisi, christopher, Ademola, Luis, Chris, PrinceBoard, singlePress, enerdealIcon, sma, sungrow, cenergy
 }

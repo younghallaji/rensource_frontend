@@ -29,7 +29,7 @@ const Faqs = () => {
     </Spinner>}
         <Accordion alwaysOpen>
             {faqs && 
-                faqs.map(faq => (
+                faqs.reverse().map(faq => (
                     <FaqsAcordion 
                     header={faq.question}
                     content={faq.answer}

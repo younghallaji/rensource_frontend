@@ -20,10 +20,8 @@ import Blog from './components/Blog/Blog';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // 
-  // </HashRouter>
+  //<HashRouter> </HashRouter>
   <BrowserRouter>
-  {/* <HashRouter> */}
     <ScrollToTop>
       <Routes>
         <Route path='/' element={<App/>}/>
@@ -40,7 +38,6 @@ root.render(
         <Route path='/project/:id' element={<SingleCaseStudyOne/>}/>
       </Routes>
       </ScrollToTop>
-    {/* </HashRouter> */}
-   </BrowserRouter> 
+   </BrowserRouter>  
 );
 reportWebVitals();
