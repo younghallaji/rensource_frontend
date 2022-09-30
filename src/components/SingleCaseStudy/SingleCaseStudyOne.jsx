@@ -28,14 +28,14 @@ const SingleCaseStudyOne = () => {
         {
           info &&
           <>
-            <SingleCaseHero topic={'Our Project'} title={info.title}/>
+            <SingleCaseHero topic={'Our Project'} title={info.singlePageTitle}/>
             <SingleCaseDetails 
                 image={info.image}
                 challengeContent={info.projectOverview}
                 // solutionTitle={'New Power Installed'}
-                solutionContent={info.projectOverview}
+                solutionContent={info.technicalInformation}
 
-                practicalContent={info.projectOverview}
+                practicalContent={info.practicalBenefits}
               />
           </>
         }

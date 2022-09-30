@@ -69,7 +69,7 @@ const PressReleasPage = () => {
     let currentPage = data.selected + 1
     const newPage = await fetchPress(currentPage)
     console.log(newPage)
-    setPressRelease(newPage)
+    setPressRelease(newPage.reverse())
   }
  
 
@@ -94,8 +94,8 @@ const PressReleasPage = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Select aria-label="Default select example" onChange={(e) => handleFilter(e.target.value)}>
                         <option disabled>Filter News</option>
-                        <option value={1}>Newer first</option>
                         <option value={2}>Older first</option>
+                        <option value={1}>Newer first</option>
                     </Form.Select> 
                 </Form.Group>
             </Form>

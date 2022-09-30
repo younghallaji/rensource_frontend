@@ -28,9 +28,9 @@ const CaseStudy = () => {
                       projects.reverse().map((project, index) => 
                       
                         (index % 2 == 0) ?
-                          <CaseOne key={index} title={project.title} desc={project.description} image={project.image} id={project.id}/>
+                          <CaseOne key={index} title={project.title} desc={project.description} image={project.image} id={project.id} projOverview={project.projectOverview}/>
                           :
-                          <CaseTwo key={index} title={project.title} desc={project.description} image={project.image} id={project.id}/>
+                          <CaseTwo key={index} title={project.title} desc={project.description} image={project.image} id={project.id} projOverview={project.projectOverview}/>
                         
                         
                   

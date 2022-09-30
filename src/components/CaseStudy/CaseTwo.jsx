@@ -4,17 +4,22 @@ import images from '../../constants/images';
 import { Link } from 'react-router-dom';
 import './casestudy.css';
 
-const CaseTwo = ({title, desc, image, id}) => {
+const CaseTwo = ({title, desc, image, id, projOverview}) => {
   return (
     <Row className='casetwo-wrapper'>
         <Col lg={5} className='caseTwo-content caseOne-content'>
         <div className="title">{title}</div>
             <div className="content">{desc}</div>
-            <div>
+            <div> 
+              {
+                (projOverview === null) ? <></>
+                :
                 <Link className='link-button' to={'/project/'+id}> 
                     Learn more
                     <img src={images.arrow} alt="resource-arrow" />
-                </Link> 
+                </Link>
+              }
+                 
             </div>
         </Col>
         <Col xs={{order:'first'}} lg={7} className='caseOne-img'>

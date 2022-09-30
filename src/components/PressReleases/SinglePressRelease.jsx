@@ -28,13 +28,7 @@ const SinglePressRelease = () => {
     const handleCopy = () => {
         navigator.clipboard.writeText(url).then(function() {
             let copyBtn = document.getElementById('copy');
-            copyBtn.setAttribute("event", "click");
-            copyBtn.setAttribute("data-delay-hide", "100")
-            copyBtn.setAttribute("data-for", "registerTip")
-            copyBtn.setAttribute("data-tip", "")
-            // document.getElementById('copy').click()
-            console.log(copyBtn)
-            // console.log('Copied!');
+            copyBtn.innerHTML='Link Copied';
         }, function() {
             console.log('Copy error')
         });
@@ -92,9 +86,9 @@ const SinglePressRelease = () => {
                 Copied!
             </ReactTooltip>
                 <div className='justify-content-end'>
-                    {/* <span className="copy-link" id='copy' onClick={handleCopy} >
+                    <span className="copy-link" id='copy' onClick={handleCopy} >
                         <FiCopy/> Copy Link 
-                    </span> */}
+                    </span> 
                     <IconContext.Provider value={{ color:'#98A2B3'}}>
                         <a target={'_blank'} href={"https://twitter.com/share?text="+ info.title+"&url="+url}><FaTwitter className='m-1 press-icon'/></a>
                         {/* <FaInstagram className='m-1 press-icon'/>
