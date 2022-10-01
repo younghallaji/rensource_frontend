@@ -19,7 +19,7 @@ import Homepage from './Homepage';
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop> 
         <Routes>
           <Route path='/' element={<Homepage />}/>
@@ -37,7 +37,7 @@ function App() {
           <Route path='*' element={<NotFound/>} />
         </Routes>
       </ScrollToTop>
-  </HashRouter>
+    </BrowserRouter>
   )
 }
 

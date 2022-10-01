@@ -1,6 +1,6 @@
 {
   "name": "rensource",
-  "homepage": "http://respaced.in/rensource",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

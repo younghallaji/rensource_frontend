@@ -7,6 +7,7 @@ import CaseHero from './CaseHero';
 import CaseOne from './CaseOne';
 import CaseTwo from './CaseTwo';
 import { Url } from '../../constants/baseurl';
+import SingleCaseHero from '../SingleCaseStudy/SingleCaseHero';
 
 const CaseStudy = () => {
   const {data:projects, loading, error} = useFetch(Url + 'Projects/AllProjects?pageNumber=1&pageSize=3')
@@ -15,7 +16,7 @@ const CaseStudy = () => {
         <Container>
             <Header />
         </Container>
-        <CaseHero title={'Our Projects'}/>
+        <SingleCaseHero title={'Our Projects'} />
         <div className='caseStudy'>
             <Container >
                 {error && <div>{error}</div>}
